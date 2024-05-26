@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <footer className="footer px-10  border-t  bg-emerald-900 py-5 opacity-80 text-base-content ">
+      <footer className="footer px-10  border-t  bg-emerald-900 py-3 opacity-90 text-base-content ">
         <div className="items-center">
           <div className="flex justify-between ">
             {/* <img
@@ -11,21 +11,21 @@ const Footer = () => {
               src={logo}
               alt=""
             /> */}
-            <p className="text-base-100 text-2xl mt-3 mb-5">TotesBari</p>{" "}
+            <p className="text-base-100 text-xl mt-3 mb-3 "> TotesWorld</p>{" "}
           </div>
-          <p className="text-base-100 text-xl mb-4  ">
+          <p className="text-base-100 text-md mb-3  ">
             Its provide a huge collection of bags with different types of taste
             and modes.
             <br />
             <br />
-            <span className="text-base-100 text-xl  ">
-              Copyright © 2024 - All right reserved by TotesBari Authority.
+            <span className="text-base-100 text-md  ">
+              Copyright © 2024 - All right reserved by TotesWorld Authority.
             </span>
           </p>
         </div>
 
         <li className="mx-20">
-          <a className=" mt-5 text-base-100  text-2xl ">
+          <a className=" mt-5 text-base-100  text-xl ">
             <label htmlFor="my-modal-3">About Us</label>
 
             <input type="checkbox" id="my-modal-3" className="modal-toggle" />
@@ -48,9 +48,9 @@ const Footer = () => {
               </div>
             </div>
           </a>
-          <a className=" mt-3 text-base-100  text-2xl">Home</a>
+          <a className=" mt-4 text-base-100  text-xl">Home</a>
 
-          <a className=" mt-3 mb-5 text-base-100  text-2xl">
+          <a className=" mt-4 mb-5 text-base-100  text-xl">
             {/* The button to open modal */}
             <label htmlFor="my-modal-5">Contact Us</label>
 
@@ -81,7 +81,7 @@ const Footer = () => {
           </button>
         </div>
 
-        <div className="lg:mt-20 md:place-self-center md:justify-self-end">
+        <div className="lg:mt-24 md:place-self-center md:justify-self-end">
           <div className="grid grid-flow-col gap-16">
             <a className="py-2 ">
               <svg
