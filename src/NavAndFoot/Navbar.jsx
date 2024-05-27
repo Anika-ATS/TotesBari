@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -31,34 +32,12 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-52 text-white"
           >
             <li>
-              <a className="text-white">Item 1</a>
+              <Link to="/">
+                {" "}
+                <a>Home</a>
+              </Link>
             </li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
-          </ul>
-        </div>
-        <a className="btn btn-ghost text-base-100 text-2xl font-serif font-bold">
-          TotesWorld
-        </a>
-      </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="text-white  menu menu-horizontal px-1">
-          <li>
-            <a>Item 1</a>
-          </li>
-          <li>
+            {/* <li>
             <details>
               <summary>Parent</summary>
               <ul className="p-2">
@@ -70,9 +49,69 @@ const Navbar = () => {
                 </li>
               </ul>
             </details>
-          </li>
+          </li> */}
+            <li>
+              <Link to="/about">
+                {" "}
+                <a>About</a>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/dashboard">
+                <a>DashBoard</a>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/login">
+                <a>Login</a>
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <a className="btn btn-ghost text-base-100 text-2xl font-serif font-bold">
+          TotesWorld
+        </a>
+      </div>
+      <div className="navbar-center hidden lg:flex">
+        <ul className="text-white  menu menu-horizontal px-1">
           <li>
-            <a>Item 3</a>
+            <Link to="/">
+              {" "}
+              <a>Home</a>
+            </Link>
+          </li>
+          {/* <li>
+            <details>
+              <summary>Parent</summary>
+              <ul className="p-2">
+                <li>
+                  <a>Submenu 1</a>
+                </li>
+                <li>
+                  <a>Submenu 2</a>
+                </li>
+              </ul>
+            </details>
+          </li> */}
+          <li>
+            <Link to="/about">
+              {" "}
+              <a>About</a>
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/dashboard">
+              <a>DashBoard</a>
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/login">
+              <a>Login</a>
+            </Link>
           </li>
         </ul>
       </div>
