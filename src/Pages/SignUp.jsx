@@ -1,7 +1,39 @@
-import React from "react";
-import signin from "../assets/img/sign-in-hand.jpg";
-import { Link } from "react-router-dom";
+import signin from "../assets/img/sss3.jpg";
+import { useState } from "react";
+import GoogleLogin from "../Componants/LoginRegistration/GoogleLogin";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+// import useAuth from "../hooks/useAuth";
+
 const SignUp = () => {
+  const [passMatch, setPassMatch] = useState(true);
+  // const { createUser, user } = useAuth();
+  // const navigate = useNavigate();
+  // const location = useLocation();
+
+  // const from = location?.state?.from?.pathname || "/";
+
+  const handleSUbmit = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    const confirm_password = form.confirm_password.value;
+
+    if (password !== confirm_password) {
+      setPassMatch(false);
+    }
+
+    console.log(email, password, confirm_password);
+
+    // if (password === confirm_password) {
+    //   createUser(email, password);
+    //   if (user) {
+    //     navigate(from);
+    //   }
+    // }
+  };
+
   return (
     <div>
       <div
@@ -11,38 +43,35 @@ const SignUp = () => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div>
+        {/* <div>
           <div className=" font-bold w-[300px] h-[10px]  hover:-translate-y-5 ">
             <div className="mx-24  group card w-[400px] h-[300px] shadow-4xl"></div>
           </div>
-        </div>
+        </div> */}
 
-        <div className=" hero min-h-screen ">
+        <div className="-mx-96 hero min-h-screen ">
           <div className=" mt-10 mb-10  rounded-lg hero-content ">
             <div className="">
               {/* form start */}
-
-              <div className="ms-96 mt-20 card flex-shrink-0 w-full max-w-sm shadow-4xl  ">
-                <form>
-                  <div className="h-auto card flex-shrink-3 w-full max-w-sm shadow-2xl bg-base-100">
+              <form onSubmit={handleSUbmit} className="hero min-h-screen ">
+                <div className="hero-content flex-col lg:flex-row-reverse">
+                  <div className="text-center lg:text-left">
+                    {/* <h1 className="text-5xl font-bold">Register now!</h1> */}
+                    <p className="py-6"></p>
+                  </div>
+                  <div className="mt-10 mx-32 card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
                       <div className="form-control">
                         <label className="label">
                           <span className="label-text">Email</span>
                         </label>
                         <input
-                          type="text"
+                          type="email"
                           placeholder="email"
-                          name="email"
-                          // ref={emailRef}
-                          required
                           className="input input-bordered"
+                          name="email"
+                          required
                         />
-                        {/* {errors.email && (
-                        <span className="text-red-600">
-                          Please fill up this field{" "}
-                        </span> */}
-                        {/* )} */}
                       </div>
                       <div className="form-control">
                         <label className="label">
@@ -51,43 +80,60 @@ const SignUp = () => {
                         <input
                           type="password"
                           placeholder="password"
+                          className="input input-bordered"
                           name="password"
                           required
-                          className="input input-bordered"
                         />
                       </div>
-
+                      <div className="form-control">
+                        <label className="label">
+                          <span className="label-text">Confirm Password</span>
+                        </label>
+                        <input
+                          type="password"
+                          placeholder="confirm password"
+                          className="input input-bordered"
+                          name="confirm_password"
+                          required
+                        />
+                      </div>
+                      {!passMatch && (
+                        <div className="my-2">
+                          <p className="text-red-500">
+                            Passwords do not match!
+                          </p>
+                        </div>
+                      )}
                       <div className="form-control mt-6">
                         <input
-                          className=" mx-auto btn btn-outline outline-[#1d2939]   text-white h-[50px] w-3/4 bg-gradient-to-r from-[#64d9b9] to-[#1d2939]  "
+                          className="btn bg-gradient-to-r from-[#64d9b9] to-[#1d2939]  text-white"
                           type="submit"
-                          value="Complete"
+                          value="Register"
                         />
-
-                        <h1 className=" text-[#1d2939] font-bold mt-3 text-center">
+                      </div>
+                      <div className="mt-6 ">
+                        <GoogleLogin />
+                      </div>
+                      <div className="mt-6">
+                        <p>
+                          Already have an account?{" "}
                           <Link
-                            className="w-full hover:link  text-[#1d2939]  text-center"
                             to="/login"
+                            className="text-emerald-900 text-lg font-serif font-bold"
                           >
-                            If you are a member, than Login please !
+                            Login
                           </Link>
-                        </h1>
+                        </p>
                       </div>
                     </div>
                   </div>
-                </form>
-              </div>
-              {/*         
-              <div className="text-center lg:text-left">
-                <div className="card mx-auto w-96 ">
-                  <div className="card w-56 h-[350px] mb-3 hover:-translate-y-5"></div>
-                </div> */}
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
-    // </div>
   );
 };
 
