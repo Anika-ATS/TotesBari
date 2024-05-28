@@ -1,6 +1,30 @@
 {
   "bags": [
     {
+      "id": "1",
+      "title": "Bloom",
+      "brand": "B-loom",
+      "price": 275,
+      "description": "it is handpainted tote for students/job holders.",
+      "image_url": "https://i.pinimg.com/originals/0b/ae/ec/0baeece4474ea1a7a091daadbedde463.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Bala",
+      "brand": "Deshii",
+      "price": 295,
+      "description": "This is a symboll of trival girls by handpainted carft.",
+      "image_url": "https://m.media-amazon.com/images/I/81nZnFwTB2L._AC_UY1000_.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Tanpura",
+      "brand": "Deshii",
+      "price": 275,
+      "description": "Tanpura bag is a handpainted tote with a  beautifull combination of mandala.",
+      "image_url": "https://sumaavi.in/cdn/shop/products/Handpainted-balloon-tote-bag-Mandala-Design_767x1000.webp?v=1676285023"
+    },
+    {
       "id": "4",
       "title": "S-Bee",
       "brand": "BEE",
@@ -29,7 +53,7 @@
       "title": "Annanya",
       "brand": "Deshii",
       "price": "300",
-      "description": "A hand painted tote bag based on emotion of teenager time lukochuri  khela.",
+      "description": "A hand painted tote bag based on emotion of teenager age.",
       "image_url": "https://studiojoyeeta.com/wp-content/uploads/2020/05/11C25C91-E6B0-4851-9B8F-318CF00AB44B-500x497.jpeg"
     },
     {
@@ -37,31 +61,15 @@
       "title": "Tribal",
       "brand": "Triboo",
       "price": "250",
-      "description": "It is based on tribal painting theme.",
+      "description": "It is based on tribal painting theme which is trendy now.",
       "image_url": "https://img.fruugo.com/product/3/47/748417473_max.jpg"
     },
     {
       "id": "9",
-      "title": "bnooo",
-      "brand": "craft",
-      "price": "299",
-      "description": "sbcjkndjwcslskd",
-      "image_url": "https://static-01.daraz.com.bd/p/a4ee91ac69a8c68672b9a2e31e3a87a9.jpg_750x400.jpg_.webp"
-    },
-    {
-      "id": "9",
-      "title": "bonu",
-      "brand": "bsh",
-      "price": "199",
-      "description": "bshahkdncjdw",
-      "image_url": "https://static-01.daraz.com.bd/p/a4ee91ac69a8c68672b9a2e31e3a87a9.jpg_750x400.jpg_.webp"
-    },
-    {
-      "id": "9",
-      "title": "sjnc",
-      "brand": "sn ,m ",
-      "price": "190",
-      "description": "jasjnx",
+      "title": "hsdcs",
+      "brand": "jjdhsuhdcs",
+      "price": "90",
+      "description": "jdnjsa",
       "image_url": "https://static-01.daraz.com.bd/p/a4ee91ac69a8c68672b9a2e31e3a87a9.jpg_750x400.jpg_.webp"
     }
   ]
