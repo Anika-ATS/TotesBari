@@ -5,29 +5,40 @@ const Accordian = () => {
     <div className="m-5 gap-3 mb-5">
       <div className="collapse collapse-arrow bg-base-200 mb-3 ">
         <input type="radio" name="my-accordion-2" />
-        <div className="collapse-title text-xl font-medium">
-          Click to open this one and close others
+        <div className="collapse-title text-xl font-medium  text-emerald-900">
+          What is our goal?
         </div>
-        <div className=" collapse-content ">
-          <p>hello</p>
+        <div className=" collapse-content  text-emerald-900">
+          <p>
+            We prefer to match the level of our customer and our product are eco
+            friendly as well as fashionable for maintaining daily life or any
+            party /occasion.{" "}
+          </p>
         </div>
       </div>
       <div className="collapse collapse-arrow bg-base-200 mb-3">
         <input type="radio" name="my-accordion-2" />
-        <div className="collapse-title text-xl font-medium">
-          Click to open this one and close others
+        <div className="collapse-title text-xl font-medium  text-emerald-900">
+          Who is our main customer?
         </div>
-        <div className="collapse-content">
-          <p>hello</p>
+        <div className="collapse-content  text-emerald-900">
+          <p>
+            We collect and design for any age person.We work for all types of
+            people as like student, children,job holder or aged person. We
+            notice your preference and maintain our collections.
+          </p>
         </div>
       </div>
-      <div className="collapse collapse-arrow bg-base-200">
+      <div className="collapse collapse-arrow bg-base-200 ">
         <input type="radio" name="my-accordion-2" />
-        <div className="collapse-title text-xl font-medium">
-          Click to open this one and close others
+        <div className="collapse-title text-xl font-medium  text-emerald-900">
+          What we have in our shop?
         </div>
-        <div className="collapse-content">
-          <p>hello</p>
+        <div className="collapse-content text-emerald-900 ">
+          <p>
+            We have eco friendly tote bags, purse, picnic bags, regular use bags
+            etc.For more information you can do visit to our shop.
+          </p>
         </div>
       </div>
     </div>
