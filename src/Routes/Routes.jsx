@@ -18,6 +18,7 @@ import DashBoard from "./../Pages/DashBoard";
 import PrivateRoutes from "./Private/PrivateRoutes";
 import AllBags from "../Pages/AllBags";
 import AddBag from "../Pages/AddBag";
+import EditBags from "../Pages/EditBags";
 
 const router = createBrowserRouter([
   {
@@ -104,6 +105,17 @@ const router = createBrowserRouter([
             <AddBag></AddBag>
           </PrivateRoutes>
         ),
+      },
+      {
+        path: "dashboard/all-bags/edit/:id",
+        element: (
+          <PrivateRoutes>
+            <EditBags></EditBags>
+          </PrivateRoutes>
+        ),
+
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/bags/${params.id}`),
       },
     ],
   },

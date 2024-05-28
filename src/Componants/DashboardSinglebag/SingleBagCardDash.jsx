@@ -60,7 +60,7 @@ const SingleBagCardDash = (data) => {
               <Link to={`/bags/${id}`}>See Details</Link>
             </div>
             <div className="p-5  badge badge-outline bg-white text-emerald-800 font-bold  mt-5">
-              <Link to={`/bags/${id}`}>Edit</Link>
+              <Link to={`edit/${id}`}>Edit</Link>
             </div>
 
             <div className=" p-5 badge badge-outline mt-5  bg-white text-rose-800 font-bold ">
@@ -69,13 +69,20 @@ const SingleBagCardDash = (data) => {
               <button
                 className=""
                 onClick={() =>
-                  document.getElementById("my_modal_1").showModal()
+                  document.getElementById("my_modal_3").showModal()
                 }
               >
                 Delete
               </button>
-              <dialog id="my_modal_1" className="modal">
+              <dialog id="my_modal_3" className="modal">
                 <div className="modal-box">
+                  <form method="dialog">
+                    {/* if there is a button in form, it will close the modal */}
+                    <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                      ✕
+                    </button>
+                  </form>
+
                   <h3 className="font-bold text-lg">Hello!</h3>
                   <p className="py-4">
                     Press delete if you are sure to delete.
