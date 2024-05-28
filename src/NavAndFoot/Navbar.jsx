@@ -9,7 +9,6 @@ const Navbar = () => {
   };
 
   return (
-    //  bg-emerald-900 py-5 px-10 opacity-80
     <div className="navbar  bg-emerald-800 py-5 px-10 opacity-80">
       <div className="navbar-start">
         <div className="dropdown">
@@ -56,10 +55,39 @@ const Navbar = () => {
               </ul>
             </details>
           </li> */}
+
             <li>
-              <Link to="/about">
+              <Link to="/Handpainted">
                 {" "}
-                <a>About</a>
+                <a>Handpainted Bags</a>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/Kids">
+                {" "}
+                <a>Kids Bag</a>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/Adult">
+                {" "}
+                <a>Adult Section</a>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/Gallery">
+                {" "}
+                <a>Gallery</a>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/aboutUs">
+                {" "}
+                <a>Team</a>
               </Link>
             </li>
 
@@ -121,11 +149,47 @@ const Navbar = () => {
             </details>
           </li> */}
           <li>
+            <Link to="/Handpainted">
+              {" "}
+              <a>Handpainted Bags</a>
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/Kids">
+              {" "}
+              <a>Kids Bag</a>
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/Adult">
+              {" "}
+              <a>Adult Section</a>
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/Gallery">
+              {" "}
+              <a>Gallery</a>
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/aboutUs">
+              {" "}
+              <a>Team</a>
+            </Link>
+          </li>
+
+          {/* 
+          <li>
             <Link to="/about">
               {" "}
               <a>About</a>
             </Link>
-          </li>
+          </li> */}
 
           {/* if user here */}
           {user && (
@@ -155,7 +219,10 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         {user && (
-          <button onClick={handleLogout} className="btn">
+          <button
+            onClick={handleLogout}
+            className=" text-white font-serif font-bold me-5"
+          >
             Logout
           </button>
         )}

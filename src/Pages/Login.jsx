@@ -47,7 +47,7 @@ const Login = () => {
 
               <div
                 onSubmit={handleSUbmit}
-                className="  mt-40 card flex-shrink-0 w-full max-w-sm shadow-4xl  "
+                className="  mt-10 card flex-shrink-0 w-full max-w-sm shadow-4xl  "
               >
                 <form>
                   <div className="h-auto mx-36 card flex-shrink-3 w-full max-w-sm shadow-2xl bg-base-100">

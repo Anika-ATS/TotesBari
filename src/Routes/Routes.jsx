@@ -3,11 +3,17 @@ import MainLayout from "../Layout/MainLayout";
 import DashBoardLayout from "../Layout/DashBoardLayout";
 import Home from "../Pages/Home";
 
-import About from "../Pages/About";
+import Team from "../Pages/Team";
 import Login from "../Pages/Login";
 import ErrorPage from "../Pages/ErrorPage";
 import DashBoard from "../Pages/DashBoard";
 import SignUp from "../Pages/SignUp";
+import Handpainted from "./../Pages/Handpainted";
+import Kids from "./../Pages/Kids";
+import Adult from "./../Pages/Adult";
+import Gallery from "./../Pages/Gallery";
+import BagsDetails from "./../Pages/BagsDetails";
+
 import PrivateRoutes from "./Private/PrivateRoutes";
 
 const router = createBrowserRouter([
@@ -19,11 +25,43 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch("http://localhost:3000/bags"),
       },
       {
-        path: "/about",
-        element: <About></About>,
+        path: "/bags/:id",
+        element: <BagsDetails></BagsDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/bags/${params.id}`),
       },
+
+      {
+        path: "/aboutUs",
+        element: <Team></Team>,
+      },
+
+      {
+        path: "/Handpainted",
+        element: <Handpainted></Handpainted>,
+      },
+
+      {
+        path: "/Kids",
+        element: <Kids></Kids>,
+      },
+      {
+        path: "/Adult",
+        element: <Adult></Adult>,
+      },
+
+      {
+        path: "/Gallery",
+        element: <Gallery></Gallery>,
+      },
+      // {
+      //   path: "/Adult",
+      //   element: <Handpainted></Handpainted>
+      // },
+
       {
         path: "/login",
         element: <Login></Login>,
