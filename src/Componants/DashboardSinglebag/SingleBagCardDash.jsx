@@ -2,9 +2,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const SingleBagCardDash = ({ bag, onDelete }) => {
+const SingleBagCardDash = (data) => {
   // eslint-disable-next-line react/prop-types
-  const { id, title, brand, price, description, image_url } = bag.product;
+  const { id, title, brand, price, description, image_url } = data.bag;
 
   //   delete
 
@@ -15,8 +15,16 @@ const SingleBagCardDash = ({ bag, onDelete }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        onDelete(id);
+        // onDelete(id);
       });
+    // <div className="toast toast-start">
+    //   <div className="alert alert-info">
+    //     <span>New mail arrived.</span>
+    //   </div>
+    //   <div className="alert alert-success">
+    //     <span>Message sent successfully.</span>
+    //   </div>
+    // </div>;
   };
 
   return (

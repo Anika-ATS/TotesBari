@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 
 import SingleBagCardDash from "../Componants/DashboardSinglebag/SingleBagCardDash";
 
+// import SingleProductCardDashboard from "../components/dashboard/SingleProductCardDashboard";
+
 const AllBags = () => {
   const [products, setProducts] = useState([]);
 
@@ -12,9 +14,9 @@ const AllBags = () => {
       .then((data) => setProducts(data));
   }, []);
 
-  const handleDeleteProduct = (id) => {
-    setProducts(products.filter((product) => product.id !== id));
-  };
+  //   const handleDeleteProduct = (id) => {
+  //     setProducts(products.filter((product) => product.id !== id));
+  //   };
 
   return (
     <div className="mx-20 me-5 ">
@@ -28,7 +30,7 @@ const AllBags = () => {
           <SingleBagCardDash
             key={bag.id}
             bag={bag}
-            onDelete={handleDeleteProduct}
+            //   onDelete={handleDeleteProduct}
           />
         ))}
       </div>
