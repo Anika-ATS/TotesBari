@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import SingleBag from "../Componants/Home/SingleBag";
-// import SingleProductCardDashboard from "../components/dashboard/SingleProductCardDashboard";
+
+import SingleBagCardDash from "../Componants/DashboardSinglebag/SingleBagCardDash";
 
 const AllBags = () => {
   const [products, setProducts] = useState([]);
@@ -17,14 +17,15 @@ const AllBags = () => {
   //   };
 
   return (
-    <div className="mx-10 me-5 ">
-      <h1 className="text-3xl p-2 font-bold text-center mx-16 mb-3 mt-3 text-emerald-900">
+    <div className="mx-20 me-5 ">
+      <h1 className="text-3xl  p-2 font-bold text-center mx-16 mb-5 mt-3 text-emerald-900">
         All Produts
       </h1>
-      <div className=" grid grid-cols-2 gap-32">
+      {/* className=" grid grid-cols-2 gap-10" */}
+      <div className=" flex flex-wrap gap-10">
         {products.map((bag) => (
           // <SingleProductCardDashboard
-          <SingleBag
+          <SingleBagCardDash
             key={bag.id}
             bag={bag}
             //   onDelete={handleDeleteProduct}

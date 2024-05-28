@@ -5,14 +5,15 @@ const About = () => {
   return (
     <div>
       <MarqueeBag></MarqueeBag>
-      <div className="hero min-h-screen  p-5 bg-gradient-to-r from-[#64d9b9] to-[#1d2939] ">
+      <div className="hero min-h-screen  p-6 bg-gradient-to-r from-[#64d9b9] to-[#1d2939] ">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <img src={Ab} className="max-w-sm rounded-lg shadow-2xl" />
+          <img
+            src={Ab}
+            className="animate-bounce mt-8  max-w-sm rounded-lg shadow-2xl"
+          />
           <div>
-            <h1 className="text-4xl font-bold text-white">
-              About Our Thoughts!
-            </h1>
-            <p className="py-6 font-serif text-white">
+            <h1 className="text-4xl font-bold text-white">Our Thoughts!</h1>
+            <p className="py-6 font-serif text-white animate-pulse">
               Welcome to EcoTote Bags, your go-to destination for stylish,
               sustainable, and eco-friendly tote bags. Our mission is to provide
               high-quality reusable bags that help reduce plastic waste and

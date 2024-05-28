@@ -17,6 +17,7 @@ import DashBoard from "./../Pages/DashBoard";
 
 import PrivateRoutes from "./Private/PrivateRoutes";
 import AllBags from "../Pages/AllBags";
+import AddBag from "../Pages/AddBag";
 
 const router = createBrowserRouter([
   {
@@ -93,6 +94,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoutes>
             <AllBags></AllBags>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "dashboard/add-bags",
+        element: (
+          <PrivateRoutes>
+            <AddBag></AddBag>
           </PrivateRoutes>
         ),
       },
