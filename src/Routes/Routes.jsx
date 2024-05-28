@@ -6,15 +6,17 @@ import Home from "../Pages/Home";
 import Team from "../Pages/Team";
 import Login from "../Pages/Login";
 import ErrorPage from "../Pages/ErrorPage";
-import DashBoard from "../Pages/DashBoard";
+// import DashBoard from "../Pages/DashBoard";
 import SignUp from "../Pages/SignUp";
 import Handpainted from "./../Pages/Handpainted";
 import Kids from "./../Pages/Kids";
 import Adult from "./../Pages/Adult";
 import Gallery from "./../Pages/Gallery";
 import BagsDetails from "./../Pages/BagsDetails";
+import DashBoard from "./../Pages/DashBoard";
 
 import PrivateRoutes from "./Private/PrivateRoutes";
+import AllBags from "../Pages/AllBags";
 
 const router = createBrowserRouter([
   {
@@ -79,10 +81,18 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "",
+        path: "home",
         element: (
           <PrivateRoutes>
             <DashBoard></DashBoard>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "dashboard/all-bags",
+        element: (
+          <PrivateRoutes>
+            <AllBags></AllBags>
           </PrivateRoutes>
         ),
       },
