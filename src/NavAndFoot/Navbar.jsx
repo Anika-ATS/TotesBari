@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     //  bg-emerald-900 py-5 px-10 opacity-80
-    <div className="navbar  bg-emerald-900 py-5 px-10 opacity-80">
+    <div className="navbar  bg-emerald-800 py-5 px-10 opacity-80">
       <div className="navbar-start">
         <div className="dropdown">
           <div
