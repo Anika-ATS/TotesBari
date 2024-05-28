@@ -8,6 +8,7 @@ import Login from "../Pages/Login";
 import ErrorPage from "../Pages/ErrorPage";
 import DashBoard from "../Pages/DashBoard";
 import SignUp from "../Pages/SignUp";
+import PrivateRoutes from "./Private/PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -35,13 +36,17 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/dashboard",
+    path: "dashboard",
     element: <DashBoardLayout></DashBoardLayout>,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: " ",
-        element: <DashBoard></DashBoard>,
+        path: "",
+        element: (
+          <PrivateRoutes>
+            <DashBoard></DashBoard>
+          </PrivateRoutes>
+        ),
       },
     ],
   },

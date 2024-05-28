@@ -1,14 +1,13 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-// import useAuth from "../hooks/useAuth";
+import useAuth from "../Hooks/useAuth";
 import { useEffect } from "react";
 import login from "../assets/img/login.jpg";
 
 import GoogleLogin from "../Componants/LoginRegistration/GoogleLogin";
 
-// import { Carousel } from "react-responsive-carousel";
 const Login = () => {
-  // const { signIn, user } = useAuth();
+  const { signIn, user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -23,14 +22,14 @@ const Login = () => {
 
     console.log(email, password);
 
-    // await signIn(email, password);
+    await signIn(email, password);
   };
 
-  // useEffect(() => {
-  //   if (user) {
-  //     navigate(from, { replace: true });
-  //   }
-  // }, [user, from, navigate]);
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user, from, navigate]);
 
   return (
     <div>
@@ -48,12 +47,13 @@ const Login = () => {
 
               <div
                 onSubmit={handleSUbmit}
-                className="  mt-32 card flex-shrink-0 w-full max-w-sm shadow-4xl  "
+                className="  mt-40 card flex-shrink-0 w-full max-w-sm shadow-4xl  "
               >
                 <form>
                   <div className="h-auto mx-36 card flex-shrink-3 w-full max-w-sm shadow-2xl bg-base-100">
-                    <div className="card-body">
+                    <div className="card-body ">
                       <div className="form-control">
+                        {/* <h1>Login</h1> */}
                         <label className="label">
                           <span className="label-text">Email</span>
                         </label>
@@ -96,11 +96,13 @@ const Login = () => {
 
                       <div className="form-control mt-6">
                         <input
-                          className=" mx-auto btn btn-outline outline-[#1d2939]   text-white h-[50px] w-2/3 bg-gradient-to-r from-[#64d9b9] to-[#1d2939]  "
+                          className=" mx-12 btn btn-outline outline-[#1d2939]   text-white h-[50px] w-2/3 bg-gradient-to-r from-[#64d9b9] to-[#1d2939]  "
                           type="submit"
                           value="Login"
                         />
+
                         {/* <p>OR</p> */}
+
                         <div className="mx-auto h-[50px]  w-2/3 mt-6 mb-3">
                           <GoogleLogin />
                         </div>
@@ -123,10 +125,10 @@ const Login = () => {
         </div>
 
         <div className="mx-10 hero min-h-screen ">
-          <div className=" mt-10 mb-10  rounded-lg hero-content ">
+          <div className="mt-44 mb-10  rounded-lg hero-content ">
             <div className="">
               <div className="border bg-gradient-to-r from-[#64d9b9] to-[#1d2939]  font-seif  font-bold text-center text-white rounded-md fade-in-word animate-pulse ">
-                <p className="text-3xl">Explore TotesWorld !</p>
+                <p className="text-3xl"></p>
               </div>
             </div>
           </div>

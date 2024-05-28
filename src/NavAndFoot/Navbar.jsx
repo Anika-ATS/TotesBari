@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import useAuth from "../Hooks/useAuth";
 const Navbar = () => {
+  const { logout, user } = useAuth();
+
+  const handleLogout = async () => {
+    await logout();
+  };
+
   return (
     //  bg-emerald-900 py-5 px-10 opacity-80
     <div className="navbar  bg-emerald-900 py-5 px-10 opacity-80">
@@ -57,22 +63,36 @@ const Navbar = () => {
               </Link>
             </li>
 
-            <li>
-              <Link to="/dashboard">
-                <a>DashBoard</a>
-              </Link>
-            </li>
+            {user && (
+              <li>
+                <Link to="/dashboard">
+                  <a>DashBoard</a>
+                </Link>
+              </li>
+            )}
 
-            <li>
-              <Link to="/login">
-                <a>Login</a>
-              </Link>
-            </li>
-            <li>
-              <Link to="/signin">
-                <a>Register</a>
-              </Link>
-            </li>
+            {!user && (
+              <>
+                <li>
+                  <Link to="/login">
+                    <a>Login</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/signin">
+                    <a>Register</a>
+                  </Link>
+                </li>
+              </>
+            )}
+
+            {user && (
+              <li>
+                <button onClick={handleLogout} className="btn">
+                  Logout
+                </button>
+              </li>
+            )}
           </ul>
         </div>
         <a className="btn btn-ghost text-base-100 text-2xl font-serif font-bold">
@@ -107,27 +127,43 @@ const Navbar = () => {
             </Link>
           </li>
 
-          <li>
-            <Link to="/dashboard">
-              <a>DashBoard</a>
-            </Link>
-          </li>
+          {/* if user here */}
+          {user && (
+            <li>
+              <Link to="/dashboard">
+                <a>DashBoard</a>
+              </Link>
+            </li>
+          )}
 
-          <li>
-            <Link to="/login">
-              <a>Login</a>
-            </Link>
-          </li>
+          {!user && (
+            <>
+              <li>
+                <Link to="/login">
+                  <a>Login</a>
+                </Link>
+              </li>
 
-          <li>
-            <Link to="/signin">
-              <a>Register</a>
-            </Link>
-          </li>
+              <li>
+                <Link to="/signin">
+                  <a>Register</a>
+                </Link>
+              </li>
+            </>
+          )}
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        {user && (
+          <button onClick={handleLogout} className="btn">
+            Logout
+          </button>
+        )}
+        <div className="avatar">
+          <div className="w-12 rounded-full border-2 border-black">
+            <img src={user?.photoURL || "/public/placeholder.jpg"} />
+          </div>
+        </div>
       </div>
     </div>
   );

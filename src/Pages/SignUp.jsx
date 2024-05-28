@@ -2,15 +2,15 @@ import signin from "../assets/img/sss3.jpg";
 import { useState } from "react";
 import GoogleLogin from "../Componants/LoginRegistration/GoogleLogin";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-// import useAuth from "../hooks/useAuth";
+import useAuth from "../Hooks/useAuth";
 
 const SignUp = () => {
   const [passMatch, setPassMatch] = useState(true);
-  // const { createUser, user } = useAuth();
-  // const navigate = useNavigate();
-  // const location = useLocation();
+  const { createUser, user } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  // const from = location?.state?.from?.pathname || "/";
+  const from = location?.state?.from?.pathname || "/";
 
   const handleSUbmit = (e) => {
     e.preventDefault();
@@ -26,12 +26,12 @@ const SignUp = () => {
 
     console.log(email, password, confirm_password);
 
-    // if (password === confirm_password) {
-    //   createUser(email, password);
-    //   if (user) {
-    //     navigate(from);
-    //   }
-    // }
+    if (password === confirm_password) {
+      createUser(email, password);
+      if (user) {
+        navigate(from);
+      }
+    }
   };
 
   return (
