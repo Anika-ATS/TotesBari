@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
-
+import Swal from "sweetalert2";
 const EditBags = () => {
   const bag = useLoaderData();
 
@@ -35,13 +35,14 @@ const EditBags = () => {
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
+          Swal.fire({ title: "Edited Succesfully!", color: "#64d9b9" });
+          form.reset();
         });
 
       if (response.ok) {
         const result = await response.json();
 
         console.log("Success:", result);
-        form.reset();
       } else {
         console.error("Failed to submit:", response.statusText);
       }

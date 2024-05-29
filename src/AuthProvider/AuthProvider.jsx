@@ -37,9 +37,9 @@ const AuthProvider = ({ children }) => {
   const googleProvider = new GoogleAuthProvider();
 
   //user create
-  const createUser = (name, email, password) => {
+  const createUser = (email, password) => {
     setLoading(true);
-    return createUserWithEmailAndPassword(auth, name, email, password);
+    return createUserWithEmailAndPassword(auth, email, password);
   };
 
   //   login
@@ -67,7 +67,7 @@ const AuthProvider = ({ children }) => {
         {
           uid: currentUser.uid,
           email: currentUser.email,
-          displayName: currentUser.name,
+          displayName: currentUser.displayName,
         },
         { merge: true }
       );

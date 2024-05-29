@@ -1,14 +1,6 @@
 {
   "bags": [
     {
-      "id": "1",
-      "title": "Bloom",
-      "brand": "B-loom",
-      "price": 275,
-      "description": "it is handpainted tote for students/job holders.",
-      "image_url": "https://i.pinimg.com/originals/0b/ae/ec/0baeece4474ea1a7a091daadbedde463.jpg"
-    },
-    {
       "id": "2",
       "title": "Bala",
       "brand": "Deshii",
@@ -95,6 +87,14 @@
       "price": "199",
       "description": "It is a asthetic bag mixture of thread and hand painting.",
       "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHIRfnOvop6k1aXQ2o6WMEg_qEKr5IfWcCw_SbauqJnFmOxchEsouaFs4EqbET4whwuf3djZkONyqgfcS4phz1_FTHgYsCRxPHi-bib2xERVQTa6snBXGJGGkUgzPm057BcyqSYLQ_u-Fz/s2048/Line+art+embroidered+tote+bag.jpg"
+    },
+    {
+      "id": "13",
+      "title": "Cherry",
+      "brand": "Craft",
+      "price": "180",
+      "description": "A Cherry painted bag",
+      "image_url": "https://i.pinimg.com/736x/cb/1c/82/cb1c8201bc4e6ea0fd04395af12e4819.jpg"
     }
   ]
 }

@@ -1,5 +1,6 @@
 import React from "react";
-
+import Swal from "sweetalert2";
+import "react-toastify/dist/ReactToastify.css";
 const AddBag = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,6 +25,7 @@ const AddBag = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        Swal.fire({ title: "Bag Added Succesfully!", color: "#64d9b9" });
         form.reset();
       });
   };

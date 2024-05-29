@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
+import Swal from "sweetalert2";
 import useAuth from "../Hooks/useAuth";
 import { useEffect } from "react";
 import login from "../assets/img/login.jpg";
@@ -28,6 +28,7 @@ const Login = () => {
   useEffect(() => {
     if (user) {
       navigate(from, { replace: true });
+      Swal.fire({ title: "Logged In Succesfully!", color: "#1d2939" });
     }
   }, [user, from, navigate]);
 

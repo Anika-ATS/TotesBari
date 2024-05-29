@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from "react";
+import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
 const SingleBagCardDash = ({ bag, onDelete }) => {
@@ -18,6 +19,7 @@ const SingleBagCardDash = ({ bag, onDelete }) => {
         console.log(data);
         if (onDelete) {
           onDelete(id);
+          Swal.fire({ title: "Deleted Succesfully!", color: "#64d9b9" });
         }
         document.getElementById("my_modal_3").close();
       });

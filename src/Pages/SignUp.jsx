@@ -17,7 +17,7 @@ const SignUp = () => {
 
     const form = e.target;
     const email = form.email.value;
-    const name = form.name.value;
+    // const name = form.name.value;
     const password = form.password.value;
     const confirm_password = form.confirm_password.value;
 
@@ -25,10 +25,10 @@ const SignUp = () => {
       setPassMatch(false);
     }
 
-    console.log(name, email, password, confirm_password);
+    console.log(email, password, confirm_password);
 
     if (password === confirm_password) {
-      createUser(name, email, password);
+      createUser(email, password);
       if (user) {
         navigate(from);
       }
@@ -62,7 +62,7 @@ const SignUp = () => {
                   </div>
                   <div className=" mx-36 card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
-                      <div className="form-control">
+                      {/* <div className="form-control">
                         <label className="label">
                           <span className="label-text">Name</span>
                         </label>
@@ -73,7 +73,7 @@ const SignUp = () => {
                           name="name"
                           required
                         />
-                      </div>
+                      </div> */}
 
                       <div className="form-control">
                         <label className="label">
