@@ -25,6 +25,7 @@ const AddBag = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+
         Swal.fire({ title: "Bag Added Succesfully!", color: "#64d9b9" });
         form.reset();
       });

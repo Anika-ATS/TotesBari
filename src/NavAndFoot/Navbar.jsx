@@ -169,12 +169,12 @@ const Navbar = () => {
             </Link>
           </li>
 
-          <li>
+          {/* <li>
             <Link to="/Gallery">
-              {" "}
+              
               <a>Gallery</a>
             </Link>
-          </li>
+          </li> */}
 
           <li>
             <Link to="/aboutUs">
