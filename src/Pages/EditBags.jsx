@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 
 const EditBags = () => {
+  const bag = useLoaderData();
+
+  const [title, setTitle] = useState(bag.title);
+  const [price, setPrice] = useState(bag.price);
+  const [brand, setBrand] = useState(bag.brand);
+  const [id, setId] = useState(bag.id);
+  const [description, setDescription] = useState(bag.description);
+  const [image_url, setImageURL] = useState(bag.image_url);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -14,24 +24,24 @@ const EditBags = () => {
 
     const data = { id, title, brand, price, description, image_url };
 
-    // await fetch("http://localhost:3000/bags", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-type": "application/json",
-    //   },
-    //   body: JSON.stringify(data),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //     form.reset();
-    //   });
+    await fetch(`http://localhost:3000/bags/${bag.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        form.reset();
+      });
   };
 
   return (
     <div>
       <h1 className="text-3xl font-bold text-emerald-800 text-center">
-        Add a Product
+        Update a Product
       </h1>
 
       <div className="my-10 mx-5 ">
@@ -42,6 +52,8 @@ const EditBags = () => {
               type="text"
               name="title"
               placeholder="Title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
           </div>
           <div className="mt-2">
@@ -50,6 +62,8 @@ const EditBags = () => {
               type="text"
               name="brand"
               placeholder="Brand"
+              value={brand}
+              onChange={(e) => setBrand(e.target.value)}
             />
           </div>
           <div className="mt-2">
@@ -58,6 +72,8 @@ const EditBags = () => {
               type="number"
               name="price"
               placeholder="Price"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
             />
           </div>
           <div className="mt-2">
@@ -66,6 +82,8 @@ const EditBags = () => {
               type="text"
               name="description"
               placeholder="Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
             />
           </div>
           <div className="mt-2">
@@ -74,6 +92,8 @@ const EditBags = () => {
               type="text"
               name="image_url"
               placeholder="Image URL"
+              value={image_url}
+              onChange={(e) => setImageURL(e.target.value)}
             />
           </div>
           <div className="mt-2">
@@ -82,6 +102,8 @@ const EditBags = () => {
               type="text"
               name="id"
               placeholder="ID"
+              value={id}
+              onChange={(e) => setId(e.target.value)}
             />
           </div>
 
@@ -96,7 +118,6 @@ const EditBags = () => {
             <dialog id="my_modal_3" className="modal">
               <div className="modal-box">
                 <form method="dialog">
-                  {/* if there is a button in form, it will close the modal */}
                   <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
                     ✕
                   </button>
@@ -105,8 +126,9 @@ const EditBags = () => {
                 <p className="py-4">Press update if you are sure to update.</p>
                 <div className="modal-action">
                   <form method="dialog">
-                    {/* if there is a button in form, it will close the modal */}
-                    <button className="btn">Update</button>
+                    <button className="btn bg-gradient-to-r from-[#64d9b9] to-[#1d2939]  text-white text-xl">
+                      Update
+                    </button>
                   </form>
                 </div>
               </div>

@@ -10,9 +10,9 @@
     },
     {
       "id": "2",
-      "title": "Bala",
+      "title": "Balam",
       "brand": "Deshii",
-      "price": 295,
+      "price": "295",
       "description": "This is a symboll of trival girls by handpainted carft.",
       "image_url": "https://m.media-amazon.com/images/I/81nZnFwTB2L._AC_UY1000_.jpg"
     },
@@ -70,6 +70,14 @@
       "brand": "jjdhsuhdcs",
       "price": "90",
       "description": "jdnjsa",
+      "image_url": "https://static-01.daraz.com.bd/p/a4ee91ac69a8c68672b9a2e31e3a87a9.jpg_750x400.jpg_.webp"
+    },
+    {
+      "id": "10",
+      "title": "hacbhj",
+      "brand": "ksanckjbscb",
+      "price": "150",
+      "description": "jmcnljdsnckjekwjc",
       "image_url": "https://static-01.daraz.com.bd/p/a4ee91ac69a8c68672b9a2e31e3a87a9.jpg_750x400.jpg_.webp"
     }
   ]

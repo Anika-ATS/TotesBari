@@ -89,7 +89,26 @@ const AddBag = () => {
               className="btn mt-4 w-1/3 items-center bg-gradient-to-r from-[#64d9b9] to-[#1d2939]  text-white text-xl mb-3"
               type="submit"
               value="Add Bag"
+              onClick={() => document.getElementById("my_modal_3").showModal()}
             />
+            <dialog id="my_modal_3" className="modal">
+              <div className="modal-box">
+                <form method="dialog">
+                  <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                    ✕
+                  </button>
+                </form>
+                <h3 className="font-bold text-lg">Hello!</h3>
+                <p className="py-4">Press Add if you are sure to add.</p>
+                <div className="modal-action">
+                  <form method="dialog">
+                    <button className="btn bg-gradient-to-r from-[#64d9b9] to-[#1d2939]  text-white text-xl">
+                      Add
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
           </div>
         </form>
       </div>
