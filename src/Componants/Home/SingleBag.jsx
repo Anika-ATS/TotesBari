@@ -1,8 +1,10 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import { Link } from "react-router-dom";
 // import B1 from "../../assets/img/B1.webp";
-const SingleBag = (data) => {
-  const { id, title, brand, price, description, image_url } = data.bag;
+const SingleBag = ({ bag }) => {
+  const { id, title, brand, price, description, image_url } = bag;
+  // console.log(id, title, brand, price, description, image_url);
   return (
     <div>
       <div
@@ -11,7 +13,7 @@ const SingleBag = (data) => {
       >
         <figure>
           <img
-            className="object-fit-cover mt-5"
+            className="object-fit-cover mt-5 animate-pulse"
             style={{ height: "14rem" }}
             src={image_url}
             alt="bags"

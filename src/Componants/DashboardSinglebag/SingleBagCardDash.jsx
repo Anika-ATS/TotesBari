@@ -2,20 +2,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const SingleBagCardDash = (data) => {
+const SingleBagCardDash = ({ bag, onDelete }) => {
   // eslint-disable-next-line react/prop-types
-  const { id, title, brand, price, description, image_url } = data.bag;
+  const { id, title, brand, price, description, image_url } = bag;
+  console.log(bag);
 
   //   delete
 
   const handleDelete = async () => {
-    await fetch(`http://localhost:3000/bags/${id}`, {
+    await fetch(`http://localhost:3000/bags/${bag.id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        // onDelete(id);
+        if (onDelete) {
+          onDelete(id);
+        }
+        document.getElementById("my_modal_3").close();
       });
     // <div className="toast toast-start">
     //   <div className="alert alert-info">
@@ -59,9 +63,13 @@ const SingleBagCardDash = (data) => {
             <div className="p-5 badge badge-outline bg-white text-emerald-800 font-bold  mt-5 me-9">
               <Link to={`/bags/${id}`}>See Details</Link>
             </div>
+
+            {/* update */}
             <div className="p-5  badge badge-outline bg-white text-emerald-800 font-bold  mt-5">
               <Link to={`edit/${id}`}>Edit</Link>
             </div>
+
+            {/* delete part */}
 
             <div className=" p-5 badge badge-outline mt-5  bg-white text-rose-800 font-bold ">
               {/* <button onClick={handleDelete}>Delete</button> */}

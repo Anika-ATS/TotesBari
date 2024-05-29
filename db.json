@@ -10,9 +10,9 @@
     },
     {
       "id": "2",
-      "title": "Balam",
+      "title": "Bala",
       "brand": "Deshii",
-      "price": "295",
+      "price": 295,
       "description": "This is a symboll of trival girls by handpainted carft.",
       "image_url": "https://m.media-amazon.com/images/I/81nZnFwTB2L._AC_UY1000_.jpg"
     },
@@ -66,19 +66,35 @@
     },
     {
       "id": "9",
-      "title": "hsdcs",
-      "brand": "jjdhsuhdcs",
-      "price": "90",
-      "description": "jdnjsa",
+      "title": "Bonno",
+      "brand": "CRaft.BD",
+      "price": "290",
+      "description": "This is stich collection based on flowers theme.",
       "image_url": "https://static-01.daraz.com.bd/p/a4ee91ac69a8c68672b9a2e31e3a87a9.jpg_750x400.jpg_.webp"
     },
     {
       "id": "10",
-      "title": "hacbhj",
-      "brand": "ksanckjbscb",
-      "price": "150",
-      "description": "jmcnljdsnckjekwjc",
-      "image_url": "https://static-01.daraz.com.bd/p/a4ee91ac69a8c68672b9a2e31e3a87a9.jpg_750x400.jpg_.webp"
+      "title": "Rosy",
+      "brand": "Luxi",
+      "price": "160",
+      "description": "It's very simple hand painted rose theme bag are for Boss lady's.",
+      "image_url": "https://content.jdmagicbox.com/rep/b2b/hand-painted-leather-bag/hand-painted-leather-bag-1.jpg?impolicy=queryparam&im=Resize=(360,360),aspect=fit"
+    },
+    {
+      "id": "11",
+      "title": "Bonolota",
+      "brand": "CRaft.BD",
+      "price": "250",
+      "description": "It's our casual outing jute made small hand painted purse collection.",
+      "image_url": "https://i.etsystatic.com/44388088/r/il/6355e3/5746173685/il_fullxfull.5746173685_ex93.jpg"
+    },
+    {
+      "id": "12",
+      "title": "Bohoo",
+      "brand": "CRaft.BD",
+      "price": "199",
+      "description": "It is a asthetic bag mixture of thread and hand painting.",
+      "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHIRfnOvop6k1aXQ2o6WMEg_qEKr5IfWcCw_SbauqJnFmOxchEsouaFs4EqbET4whwuf3djZkONyqgfcS4phz1_FTHgYsCRxPHi-bib2xERVQTa6snBXGJGGkUgzPm057BcyqSYLQ_u-Fz/s2048/Line+art+embroidered+tote+bag.jpg"
     }
   ]
 }

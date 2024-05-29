@@ -14,28 +14,40 @@ const EditBags = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const form = e.target;
-    const id = form.id.value;
-    const title = form.title.value;
-    const brand = form.brand.value;
-    const price = form.price.value;
-    const description = form.description.value;
-    const image_url = form.image_url.value;
+    try {
+      const form = e.target;
+      const id = form.id.value;
+      const title = form.title.value;
+      const brand = form.brand.value;
+      const price = form.price.value;
+      const description = form.description.value;
+      const image_url = form.image_url.value;
 
-    const data = { id, title, brand, price, description, image_url };
+      const data = { id, title, brand, price, description, image_url };
 
-    await fetch(`http://localhost:3000/bags/${bag.id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      const response = await fetch(`http://localhost:3000/bags/${bag.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
+
+      if (response.ok) {
+        const result = await response.json();
+
+        console.log("Success:", result);
         form.reset();
-      });
+      } else {
+        console.error("Failed to submit:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (

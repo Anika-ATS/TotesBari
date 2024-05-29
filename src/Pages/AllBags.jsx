@@ -6,17 +6,26 @@ import SingleBagCardDash from "../Componants/DashboardSinglebag/SingleBagCardDas
 // import SingleProductCardDashboard from "../components/dashboard/SingleProductCardDashboard";
 
 const AllBags = () => {
-  const [products, setProducts] = useState([]);
-
+  const [bags, setBags] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/bags/")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
+    fetchBags();
   }, []);
 
-  //   const handleDeleteProduct = (id) => {
-  //     setProducts(products.filter((product) => product.id !== id));
-  //   };
+  const fetchBags = async () => {
+    const response = await fetch("http://localhost:3000/bags");
+    const data = await response.json();
+    setBags(data);
+  };
+
+  // useEffect(() => {
+  //   fetch("http://localhost:3000/bags/")
+  //     .then((res) => res.json())
+  //     .then((data) => setBags(data));
+  // }, []);
+
+  const handleDeleteProduct = (id) => {
+    setBags(bags.filter((bag) => bag.id !== id));
+  };
 
   return (
     <div className="mx-20 me-5 ">
@@ -25,12 +34,12 @@ const AllBags = () => {
       </h1>
       {/* className=" grid grid-cols-2 gap-10" */}
       <div className=" flex flex-wrap gap-10">
-        {products.map((bag) => (
+        {bags.map((bag) => (
           // <SingleProductCardDashboard
           <SingleBagCardDash
             key={bag.id}
             bag={bag}
-            //   onDelete={handleDeleteProduct}
+            onDelete={handleDeleteProduct}
           />
         ))}
       </div>
