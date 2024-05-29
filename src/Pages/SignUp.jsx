@@ -17,6 +17,7 @@ const SignUp = () => {
 
     const form = e.target;
     const email = form.email.value;
+    const name = form.name.value;
     const password = form.password.value;
     const confirm_password = form.confirm_password.value;
 
@@ -24,10 +25,10 @@ const SignUp = () => {
       setPassMatch(false);
     }
 
-    console.log(email, password, confirm_password);
+    console.log(name, email, password, confirm_password);
 
     if (password === confirm_password) {
-      createUser(email, password);
+      createUser(name, email, password);
       if (user) {
         navigate(from);
       }
@@ -59,8 +60,21 @@ const SignUp = () => {
                     {/* <h1 className="text-5xl font-bold">Register now!</h1> */}
                     <p className="py-6"></p>
                   </div>
-                  <div className="mt-10 mx-32 card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                  <div className=" mx-36 card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
+                      <div className="form-control">
+                        <label className="label">
+                          <span className="label-text">Name</span>
+                        </label>
+                        <input
+                          type="text"
+                          placeholder="name"
+                          className="input input-bordered"
+                          name="name"
+                          required
+                        />
+                      </div>
+
                       <div className="form-control">
                         <label className="label">
                           <span className="label-text">Email</span>

@@ -14,20 +14,35 @@ export const AuthContext = createContext(null);
 
 const auth = getAuth(app);
 
+// for all user
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  doc,
+  setDoc,
+} from "firebase/firestore";
+
+const db = getFirestore(app);
+
 // eslint-disable-next-line react/prop-types
 const AuthProvider = ({ children }) => {
   // checking user is in or not
   const [user, setUser] = useState(null);
+
+  // for all user
+  const [users, setUsers] = useState([]);
+
   const [loading, setLoading] = useState(true);
   const googleProvider = new GoogleAuthProvider();
 
   //user create
-  const createUser = (email, password) => {
+  const createUser = (name, email, password) => {
     setLoading(true);
-    return createUserWithEmailAndPassword(auth, email, password);
+    return createUserWithEmailAndPassword(auth, name, email, password);
   };
 
-  //   signin
+  //   login
 
   const signIn = (email, password) => {
     setLoading(true);
@@ -43,25 +58,75 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, googleProvider);
   };
 
-  //   checking login or not
+  // Log user sign-in
+  const logUserSignIn = async (currentUser) => {
+    if (currentUser) {
+      const userRef = doc(db, "userAuth", currentUser.uid);
+      await setDoc(
+        userRef,
+        {
+          uid: currentUser.uid,
+          email: currentUser.email,
+          displayName: currentUser.name,
+        },
+        { merge: true }
+      );
+    }
+  };
+
+  // Fetch all users from Firestore
+  const fetchUsers = async () => {
+    const usersCollection = collection(db, "userAuth");
+    const usersSnapshot = await getDocs(usersCollection);
+    const usersList = usersSnapshot.docs.map((doc) => doc.data());
+    setUsers(usersList);
+  };
+
+  // Checking login or not
   useEffect(() => {
-    const unscubcribe = onAuthStateChanged(auth, (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      setLoading(false);
       if (currentUser) {
-        setUser(currentUser);
-        setLoading(false);
-        console.log(currentUser);
-      } else {
-        setLoading(false);
+        logUserSignIn(currentUser); // Log user sign-in
+        fetchUsers(); // Fetch users if logged in
       }
     });
     return () => {
-      return unscubcribe();
+      return unsubscribe();
     };
   }, []);
 
-  const authInfo = { user, googleLogin, createUser, signIn, logout, loading };
+  //   checking login or not
+
+  // useEffect(() => {
+  //   const unscubcribe = onAuthStateChanged(auth, (currentUser) => {
+  //     if (currentUser) {
+  //       setUser(currentUser);
+  //       setLoading(false);
+  //       console.log(currentUser);
+  //     } else {
+  //       setLoading(false);
+  //     }
+  //   });
+  //   return () => {
+  //     return unscubcribe();
+  //   };
+  // }, []);
+
+  const authInfo = {
+    user,
+    googleLogin,
+    createUser,
+    signIn,
+    logout,
+    loading,
+    users,
+  };
   return (
-    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={authInfo}>
+      {!loading && children}
+    </AuthContext.Provider>
   );
 };
 export default AuthProvider;
